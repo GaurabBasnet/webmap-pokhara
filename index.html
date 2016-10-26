@@ -16,7 +16,7 @@
 
  
   var greenIcon = L.icon({
-   iconUrl: 'hospital-512.gif',
+   iconUrl: 'images/hospital-512.gif',
    
 
     iconSize:     [30, 30], // size of the icon
@@ -27,7 +27,7 @@
 
  });
   var schIcon = L.icon({
-   iconUrl: 'school2.jpg',
+   iconUrl: 'images/school2.jpg',
    
 
     iconSize:     [30, 30], // size of the icon
@@ -73,8 +73,8 @@ var office = L.layerGroup([marker9, marker10, marker11, marker12]);
 
 
 var overlayMaps = {
-    "<img src='hospital-512.gif' height='20' width='20' /> <span class='hospital'>Hospital</span>": hospital,
-    "<img src='school2.jpg'  height='20' width='20'/> <span class='school'>School</span>": school,
+    "<img src='images/hospital-512.gif' height='20' width='20' /> <span class='hospital'>Hospital</span>": hospital,
+    "<img src='images/school2.jpg'  height='20' width='20'/> <span class='school'>School</span>": school,
      "<img src=''  height='20' width='20'/> <span class='office'>Government Offices</span>": office,
   }
 L.control.layers(null,overlayMaps).addTo(mymap);
