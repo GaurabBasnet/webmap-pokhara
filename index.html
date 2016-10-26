@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<style>
+
+#mapid { height: 600px; }
+</style>
+<title>INTERACTIVE MAP OF POKHARA</title>
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+</HEAD>
+<BODY>
+<h1><center><b>PREPARE POKHARA</b></center></h1>
+ <div id="mapid"></div>
+ <script>
+ var mymap = L.map('mapid').setView([28.2239,83.9839],16);
+
+ 
+  var greenIcon = L.icon({
+   iconUrl: 'hospital-512.gif',
+   
+
+    iconSize:     [30, 30], // size of the icon
+    
+    iconAnchor:   [10,10], // point of the icon which will correspond to marker's location
+    
+   popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+
+ });
+  var schIcon = L.icon({
+   iconUrl: 'school2.jpg',
+   
+
+    iconSize:     [30, 30], // size of the icon
+    
+    iconAnchor:   [10,10], // point of the icon which will correspond to marker's location
+    
+   popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+
+ });
+
+var marker1 = L.marker([28.22583,83.99003], {icon: greenIcon}).addTo(mymap);
+marker1.bindPopup("<b><h2>Fishtail Hospital</h2></b><p>ICU= yes<p>Major and Minor Operation possible</p><p>phone number=061-522415</p><br>").openPopup();
+var marker2 = L.marker([28.22081,83.98374], {icon: greenIcon}).addTo(mymap);
+marker2.bindPopup("<b>Lakecity Hospital</b><br>").openPopup();
+var marker3 = L.marker([28.21961,83.98655], {icon: greenIcon}).addTo(mymap);
+marker3.bindPopup("<b>Padma Nurshing Homes</b><br>").openPopup();
+var marker4 = L.marker([28.21883,83.99794], {icon: greenIcon}).addTo(mymap);
+marker4.bindPopup("<b>Sai Archana Hospital</b><br>").openPopup();
+
+var marker5 = L.marker([28.22858,83.98302], {icon: schIcon}).addTo(mymap);
+marker5.bindPopup("<b>Phewa Public Secondary School</b><br>").openPopup();
+var marker6 = L.marker([28.22727,83.98833], {icon: schIcon}).addTo(mymap);
+marker6.bindPopup("<b>Kumdini Homes School</b><br>").openPopup();
+var marker7 = L.marker([28.21991,83.98922], {icon: schIcon}).addTo(mymap);
+marker7.bindPopup("<b>Sagarmatha Higher Secondary School</b><br>").openPopup();
+var marker8 = L.marker([28.22147,83.99030], {icon: schIcon }).addTo(mymap);
+marker8.bindPopup("<b>Siddhartha Lovedale Secondary School</b><br>").openPopup();
+
+
+var marker9 = L.marker([28.21784,83.98615]).addTo(mymap);
+marker9.bindPopup("<b>Pokhara Sub Metropolitan Office</b><br>").openPopup();
+var marker10 = L.marker([28.20249,83.97001]).addTo(mymap);
+marker10.bindPopup("<b>District Administration Office</b><br>").openPopup();
+var marker11 = L.marker([28.20445,83.9727]).addTo(mymap);
+marker11.bindPopup("<b>TAX Invoice Office</b><br>").openPopup();
+var marker12 = L.marker([28.20181,83.96826]).addTo(mymap);
+marker12.bindPopup("<b>Kaski District Court</b><br>").openPopup();
+
+
+var hospital = L.layerGroup([marker1, marker2, marker3, marker4]);
+var school = L.layerGroup([marker5, marker6, marker7, marker8]);
+var office = L.layerGroup([marker9, marker10, marker11, marker12]);
+
+
+var overlayMaps = {
+    "<img src='hospital-512.gif' height='20' width='20' /> <span class='hospital'>Hospital</span>": hospital,
+    "<img src='school2.jpg'  height='20' width='20'/> <span class='school'>School</span>": school,
+     "<img src=''  height='20' width='20'/> <span class='office'>Government Offices</span>": office,
+  }
+L.control.layers(null,overlayMaps).addTo(mymap);
+
+
+
+
+ L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Pokhara Web Map by Gaurab',
+    maxZoom: 18,
+    id: 'your.mapbox.project.id',
+  accessToken: 'your.mapbox.public.access.token'
+}).addTo(mymap);
+
+
+
+
+ 
+ </script>
+</BODY>
+</HTML>
